@@ -20,7 +20,7 @@ bool CMapTileTexture::Load()
 
 bool CMapTileTexture::LoadXml( const wchar_t* pwszXmlFile )
 {
-
+    return true;
 }
 
 MapTileTexture* CMapTileTexture::GetTile( int nId )

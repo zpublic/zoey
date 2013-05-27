@@ -1,5 +1,5 @@
 #pragma once
-#include "s_map.h"
+#include "struct/s_map.h"
 
 const wchar_t* pwszDefaultXml = L"res\\xml\\map_tile.xml";
 
