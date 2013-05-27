@@ -9,10 +9,39 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{aa6ec831-8627-4c28-a6a4-394fd8e2a7ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="import">
+      <UniqueIdentifier>{c6e58ca8-5105-4e83-aa60-d5d1f064192a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\interface">
+      <UniqueIdentifier>{132a606f-3b52-4645-8492-3b0a5a2a2af7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\struct">
+      <UniqueIdentifier>{d45420eb-1d12-4cdc-a13c-97355e9cba84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\src">
+      <UniqueIdentifier>{96ccbe7f-77e1-4c14-9e4b-7cd183e29968}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>sourcefiles</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\common\src\c_map_texture.cpp">
+      <Filter>common\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\interface\i_map.h">
+      <Filter>common\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\struct\s_map.h">
+      <Filter>common\struct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\src\c_map_texture.h">
+      <Filter>common\src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
