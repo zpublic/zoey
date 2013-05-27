@@ -1,7 +1,7 @@
 #pragma once
 #include "s_map.h"
 
-const wchar_t* pwszDefaultXml = L"res\\xml\\map_tile.xml"
+const wchar_t* pwszDefaultXml = L"res\\xml\\map_tile.xml";
 
 class CMapTileTexture
 {

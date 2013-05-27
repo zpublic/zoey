@@ -35,7 +35,7 @@ MapTileTexture* CMapTileTexture::GetTile( int nId )
     return pTex;
 }
 
-void pwszDefaultXml::Clear()
+void CMapTileTexture::Clear()
 {
     m_poolTile.clear();
 }
