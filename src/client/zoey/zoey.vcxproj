@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\common\src\c_map_texture.cpp" />
     <ClCompile Include="engine\game_engine.cpp" />
+    <ClCompile Include="engine\graphics_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -90,6 +91,7 @@
     <ClInclude Include="..\..\..\import\irrlicht\CIndexBuffer.h" />
     <ClInclude Include="..\..\..\import\irrlicht\CMeshBuffer.h" />
     <ClInclude Include="engine\game_engine.h" />
+    <ClInclude Include="engine\graphics_engine.h" />
     <ClInclude Include="engine\iengine.h" />
     <ClInclude Include="engine\scene_engine.h" />
     <ClInclude Include="scene\scene.h" />

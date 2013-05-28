@@ -1,11 +1,14 @@
 #include "stdafx.h"
 #include "game_engine.h"
+#include "graphics_engine.h"
 
 GameEngine* Singleton<GameEngine>::m_pInst = NULL;
 
 using namespace irr;
 
 GameEngine::GameEngine()
+    : m_irrDevice(NULL)
+    , m_VideoDriver(NULL)
 {
 
 }
@@ -26,6 +29,12 @@ bool GameEngine::Ini(TCHAR* lpszText, int Width, int Height,video::E_DRIVER_TYPE
     }
     m_irrDevice->setWindowCaption(lpszText);
     m_irrDevice->setEventReceiver(TEventReceiver);
+    m_VideoDriver = m_irrDevice->getVideoDriver();
+    ///> ini engine
+    if(!GraphicsEngine::Instance()->Initialize(m_VideoDriver))
+    {
+        return false;
+    }
     return true;
 }
 
@@ -36,9 +45,19 @@ bool GameEngine::IsDone()
 
 void GameEngine::Update()
 {
-    if(!m_irrDevice->run())
+    if(!m_irrDevice || !m_irrDevice->run())
     {
         m_IsDone = false;
+    }
+}
+
+void GameEngine::Render()
+{
+    if (m_VideoDriver)
+    {
+        m_VideoDriver->beginScene(true, true,
+            irr::video::SColor(255,100,101,140));
+        m_VideoDriver->endScene();
     }
 }
 

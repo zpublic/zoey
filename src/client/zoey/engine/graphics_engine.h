@@ -2,6 +2,7 @@
 #define GFXENGINE_
 
 #include "include\utils\singleton.h"
+#include "import\irrlicht\irrlicht.h"
 #include "iengine.h"
 
 class GraphicsEngine
@@ -13,7 +14,7 @@ public:
     GraphicsEngine();
     virtual ~GraphicsEngine();
 
-    bool Initialize() { return false;}
+    virtual bool Initialize(irr::video::IVideoDriver* pDriver);
 
 public:
     void BeginScene();
@@ -32,6 +33,7 @@ public:
     void SetClipping();
 
 private:
+    irr::video::IVideoDriver* m_Driver_ptr;
 };
 
 #endif

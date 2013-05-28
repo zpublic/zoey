@@ -50,6 +50,9 @@
     <ClCompile Include="engine\game_engine.cpp">
       <Filter>sourcefiles\engine</Filter>
     </ClCompile>
+    <ClCompile Include="engine\graphics_engine.cpp">
+      <Filter>sourcefiles\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\interface\i_map.h">
@@ -606,6 +609,9 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>sourcefiles</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\graphics_engine.h">
+      <Filter>sourcefiles\engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

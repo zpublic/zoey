@@ -13,6 +13,7 @@ int WINAPI WinMain (
     while (GameEngine::Instance()->IsDone())
     {
         GameEngine::Instance()->Update();
+        GameEngine::Instance()->Render();
     }
     return 0;
 }

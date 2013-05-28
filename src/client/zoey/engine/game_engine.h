@@ -17,7 +17,8 @@ public:
     GameEngine();
     virtual ~GameEngine();
 
-    bool Ini(TCHAR* lpszText, int Width, int Height,irr::video::E_DRIVER_TYPE TDriverType, bool IsFull);
+    bool Ini(TCHAR* lpszText, int Width, int Height,
+        irr::video::E_DRIVER_TYPE TDriverType, bool IsFull);
 
     void Close();
 
@@ -25,8 +26,11 @@ public:
 
     void Update();
 
+    void Render();
+
 private:
     irr::IrrlichtDevice* m_irrDevice;
+    irr::video::IVideoDriver* m_VideoDriver;
     bool m_IsDone;
 };
 
