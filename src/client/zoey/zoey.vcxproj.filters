@@ -15,6 +15,12 @@
     <Filter Include="import">
       <UniqueIdentifier>{c6e58ca8-5105-4e83-aa60-d5d1f064192a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sourcefiles\scene">
+      <UniqueIdentifier>{5eee12af-30a6-44d1-a400-d8dbc940926f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sourcefiles\engine">
+      <UniqueIdentifier>{75f892c4-3a7a-49fc-80ad-3b9cf8c69036}</UniqueIdentifier>
+    </Filter>
     <Filter Include="common\interface">
       <UniqueIdentifier>{132a606f-3b52-4645-8492-3b0a5a2a2af7}</UniqueIdentifier>
     </Filter>
@@ -38,6 +44,12 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>sourcefiles</Filter>
     </ClCompile>
+    <ClCompile Include="engine\scene_engine.cpp">
+      <Filter>sourcefiles\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\game_engine.cpp">
+      <Filter>sourcefiles\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\interface\i_map.h">
@@ -51,6 +63,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\import\irrlicht\aabbox3d.h">
       <Filter>import\irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\scene.h">
+      <Filter>sourcefiles\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\game_engine.h">
+      <Filter>sourcefiles\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\scene_engine.h">
+      <Filter>sourcefiles\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\iengine.h">
+      <Filter>sourcefiles\engine</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\import\irrlicht\CDynamicMeshBuffer.h">
       <Filter>import\irrlicht</Filter>
