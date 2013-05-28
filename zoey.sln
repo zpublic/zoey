@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zoey", "zoey\zoey.vcxproj", "{1F1007CD-AC55-4862-AFD6-27304F0BA1CC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zoey", "src\client\zoey\zoey.vcxproj", "{1F1007CD-AC55-4862-AFD6-27304F0BA1CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

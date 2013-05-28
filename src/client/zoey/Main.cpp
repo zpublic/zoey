@@ -1,4 +1,4 @@
-#include <Windows.h>
+#include <stdafx.h>
 #include "engine\game_engine.h"
 
 int WINAPI WinMain (

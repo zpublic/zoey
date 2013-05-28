@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "scene_engine.h"
 
 template<> SceneEngine* Singleton<SceneEngine>::m_pInst = NULL;

@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "game_engine.h"
 
 GameEngine* Singleton<GameEngine>::m_pInst = NULL;
