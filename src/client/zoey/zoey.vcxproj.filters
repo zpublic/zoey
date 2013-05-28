@@ -9,10 +9,36 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="sourcefiles\scene">
+      <UniqueIdentifier>{5eee12af-30a6-44d1-a400-d8dbc940926f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sourcefiles\engine">
+      <UniqueIdentifier>{75f892c4-3a7a-49fc-80ad-3b9cf8c69036}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>sourcefiles</Filter>
     </ClCompile>
+    <ClCompile Include="engine\game_engine.cpp">
+      <Filter>sourcefiles\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\scene_engine.cpp">
+      <Filter>sourcefiles\engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scene\scene.h">
+      <Filter>sourcefiles\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\game_engine.h">
+      <Filter>sourcefiles\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\scene_engine.h">
+      <Filter>sourcefiles\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\iengine.h">
+      <Filter>sourcefiles\engine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
