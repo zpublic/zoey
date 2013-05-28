@@ -17,7 +17,7 @@ public:
     GameEngine();
     virtual ~GameEngine();
 
-    bool Ini(TCHAR* lpszText, int Width, int Height,
+    bool Initialize(TCHAR* lpszText, int Width, int Height,
         irr::video::E_DRIVER_TYPE TDriverType, bool IsFull);
 
     void Close();

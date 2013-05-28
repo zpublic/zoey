@@ -8,7 +8,7 @@ int WINAPI WinMain (
     int nCmdShow
 )
 {
-    GameEngine::Instance()->Ini(_T("zoey"), 800, 600,
+    GameEngine::Instance()->Initialize(_T("zoey"), 800, 600,
         irr::video::EDT_OPENGL, false);
     while (GameEngine::Instance()->IsDone())
     {

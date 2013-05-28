@@ -18,7 +18,7 @@ GameEngine::~GameEngine()
     Close();
 }
 
-bool GameEngine::Ini(TCHAR* lpszText, int Width, int Height,video::E_DRIVER_TYPE TDriverType, bool IsFull)
+bool GameEngine::Initialize(TCHAR* lpszText, int Width, int Height,video::E_DRIVER_TYPE TDriverType, bool IsFull)
 {
     IEventReceiver* TEventReceiver = NULL;
     m_irrDevice = createDevice(TDriverType, irr::core::dimension2du(Width, Height),
@@ -55,9 +55,10 @@ void GameEngine::Render()
 {
     if (m_VideoDriver)
     {
-        m_VideoDriver->beginScene(true, true,
+        GraphicsEngine::Instance()->BeginScene(
             irr::video::SColor(255,100,101,140));
-        m_VideoDriver->endScene();
+        GraphicsEngine::Instance()->RenderLine(10,52,0,0);
+        GraphicsEngine::Instance()->EndScene();
     }
 }
 

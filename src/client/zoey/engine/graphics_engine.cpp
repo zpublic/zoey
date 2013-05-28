@@ -37,7 +37,16 @@ void GraphicsEngine::BeginScene()
     {
         return;
     }
+    m_Driver_ptr->beginScene();
+}
 
+void GraphicsEngine::BeginScene(irr::video::SColor color)
+{
+    if (!m_Driver_ptr)
+    {
+        return;
+    }
+    m_Driver_ptr->beginScene(true, true, color);
 }
 
 void GraphicsEngine::EndScene()
@@ -46,7 +55,7 @@ void GraphicsEngine::EndScene()
     {
         return;
     }
-
+    m_Driver_ptr->endScene();
 }
 
 void GraphicsEngine::Clear(DWORD color)
@@ -55,24 +64,52 @@ void GraphicsEngine::Clear(DWORD color)
     {
         return;
     }
-
 }
 
-void GraphicsEngine::RenderLine(float x1, float y1,
-        float x2, float y2,
-        DWORD color,
-        float z)
+void GraphicsEngine::RenderLine(int x1, int y1,
+        int x2, int y2,
+        DWORD color)
 {
     if (!m_Driver_ptr)
     {
         return;
     }
+    m_Driver_ptr->draw2DLine(core::position2d<s32>(x1, y1),
+        core::position2d<s32>(x2, y2), color);
+}
 
+
+video::ITexture* GraphicsEngine::LoadTextrure(const io::path& filename)
+{
+    if (!m_Driver_ptr)
+    {
+        return NULL;
+    }
+    return m_Driver_ptr->getTexture(filename);
+}
+
+bool GraphicsEngine::DrawImage(const std::string& strId, int x, int y,
+    DWORD color)
+{
+    if (!m_Driver_ptr)
+    {
+        return false;
+    }
+    ///> ÔÝÎÞ×ÊÔ´³Ø
+    const video::ITexture* texture = NULL;
+    if (!texture)
+    {
+        return false;
+    }
+    m_Driver_ptr->draw2DImage(texture, position2di(x, y),
+        rect<s32>(0, 0, texture->getSize().Width, texture->getSize().Height),
+        0, color, true);
+    return true;
 }
 
 bool GraphicsEngine::Initialize(irr::video::IVideoDriver* pDriver)
 {
-    if (m_Driver_ptr)
+    if (pDriver)
     {
         m_Driver_ptr = pDriver;
         return true;
