@@ -32,6 +32,9 @@ public:
     bool DrawImage(const std::string& strId, int x, int y,
         DWORD color = 0xFFFFFFFF);
 
+    bool DrawImage(irr::video::ITexture* iTex, int x, int y,
+        DWORD color = 0xFFFFFFFF);
+
     irr::video::ITexture* LoadTextrure(const irr::io::path& filename);
 
     void SetClipping( int x, int y, int w, int h);

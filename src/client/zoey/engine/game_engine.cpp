@@ -57,7 +57,16 @@ void GameEngine::Render()
     {
         GraphicsEngine::Instance()->BeginScene(
             irr::video::SColor(255,100,101,140));
+        ///> Test Draw
         GraphicsEngine::Instance()->RenderLine(10,52,0,0);
+        char filePath[MAX_PATH] = {0};
+        ::GetModuleFileNameA(0, filePath, MAX_PATH);
+        ::PathRemoveFileSpecA(filePath);
+        ::PathAppendA(filePath, "res\\images\\brick0.png");
+        GraphicsEngine::Instance()->DrawImage(
+            GraphicsEngine::Instance()->LoadTextrure(filePath),
+            100, 0);
+
         GraphicsEngine::Instance()->EndScene();
     }
 }

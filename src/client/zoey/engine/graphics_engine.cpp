@@ -107,6 +107,23 @@ bool GraphicsEngine::DrawImage(const std::string& strId, int x, int y,
     return true;
 }
 
+bool GraphicsEngine::DrawImage(irr::video::ITexture* iTex, int x, int y,
+        DWORD color)
+{
+    if (!m_Driver_ptr)
+    {
+        return false;
+    }
+    if (!iTex)
+    {
+        return false;
+    }
+    m_Driver_ptr->draw2DImage(iTex, position2di(x, y),
+        rect<s32>(0, 0, iTex->getSize().Width, iTex->getSize().Height),
+        0, color, true);
+    return true;
+}
+
 bool GraphicsEngine::Initialize(irr::video::IVideoDriver* pDriver)
 {
     if (pDriver)
