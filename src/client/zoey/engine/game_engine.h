@@ -3,6 +3,7 @@
 
 #include "import\irrlicht\irrlicht.h"
 #include "include\utils\singleton.h"
+#include <tchar.h>
 
 #ifdef _IRR_WINDOWS_
 #pragma comment(lib,"../../../import/irrlicht.lib")
@@ -16,7 +17,7 @@ public:
     GameEngine();
     virtual ~GameEngine();
 
-    bool Ini(int Width, int Height,irr::video::E_DRIVER_TYPE TDriverType, bool IsFull);
+    bool Ini(TCHAR* lpszText, int Width, int Height,irr::video::E_DRIVER_TYPE TDriverType, bool IsFull);
 
     void Close();
 

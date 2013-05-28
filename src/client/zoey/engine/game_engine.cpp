@@ -14,16 +14,16 @@ GameEngine::~GameEngine()
     Close();
 }
 
-bool GameEngine::Ini(int Width, int Height,video::E_DRIVER_TYPE TDriverType, bool IsFull)
+bool GameEngine::Ini(TCHAR* lpszText, int Width, int Height,video::E_DRIVER_TYPE TDriverType, bool IsFull)
 {
     IEventReceiver* TEventReceiver = NULL;
     m_irrDevice = createDevice(TDriverType, irr::core::dimension2du(Width, Height),
-        32, IsFull, true, false, TEventReceiver);
+        32, IsFull, false, false, TEventReceiver);
     if(m_irrDevice == NULL)
     {
         return false;
     }
-    m_irrDevice->setWindowCaption(L"Zoey");
+    m_irrDevice->setWindowCaption(lpszText);
     m_irrDevice->setEventReceiver(TEventReceiver);
     return true;
 }
@@ -37,7 +37,7 @@ void GameEngine::Update()
 {
     if(!m_irrDevice->run())
     {
-        m_IsDone = true;
+        m_IsDone = false;
     }
 }
 
