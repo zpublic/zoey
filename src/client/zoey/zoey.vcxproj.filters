@@ -33,6 +33,24 @@
     <Filter Include="import\irrlicht">
       <UniqueIdentifier>{63536e99-2ee9-4ba3-9d0a-c6229e004686}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sourcefiles\control">
+      <UniqueIdentifier>{464f42fd-61f9-4b97-bd6f-26c7e295612e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sourcefiles\control\pool">
+      <UniqueIdentifier>{1aab4659-5450-482b-9527-6243bd20e2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sourcefiles\control\xml">
+      <UniqueIdentifier>{0bba2ed4-0899-4e76-9857-8f5ade252de9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{1ddb9169-2ca5-4b16-96ce-686a4c61eca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="import\tinyxml">
+      <UniqueIdentifier>{04d9367a-1c0f-4c95-b0a6-a1114edb7623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{cfe616d1-62eb-461e-b140-75fb4219ba4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -52,6 +70,27 @@
     </ClCompile>
     <ClCompile Include="engine\graphics_engine.cpp">
       <Filter>sourcefiles\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="control\pool\picture_pool.cpp">
+      <Filter>sourcefiles\control\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="control\xml\cpicturexml_parse.cpp">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="control\xml\xml_list.cpp">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp">
+      <Filter>import\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp">
+      <Filter>import\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp">
+      <Filter>import\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\utils\utils.cpp">
+      <Filter>include\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -612,6 +651,36 @@
     </ClInclude>
     <ClInclude Include="engine\graphics_engine.h">
       <Filter>sourcefiles\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="control\pool\picture_pool.h">
+      <Filter>sourcefiles\control\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="control\xml\cpicturexml.h">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="control\xml\cpicturexml_parse.h">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="control\xml\parse_def.h">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="control\xml\xml_list.h">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="control\xml\xml_list_object.h">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="control\xml\xml_object.h">
+      <Filter>sourcefiles\control\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h">
+      <Filter>import\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\utils\singleton.h">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\utils\utils.h">
+      <Filter>include\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

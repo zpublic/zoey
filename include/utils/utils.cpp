@@ -30,6 +30,7 @@ bool utils::GetXmlIntAttribute( TiXmlElement *pElement, char *pName, int &nData 
     }
     return false;
 }
+/*
 bool utils::InstallFont(const std::string path)
 {
     return AddFontResource(path.c_str()) != 0;
@@ -42,4 +43,5 @@ void utils::ErrorMessage(const std::string text)
 {
     MessageBox(NULL, text.c_str(), NULL, MB_OK);
 }
+*/
 }
