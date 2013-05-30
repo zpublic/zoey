@@ -3,10 +3,8 @@
 
 #include "control\xml\cpicturexml_parse.h"
 #include "include\utils\singleton.h"
-//#include "control\control_object\texture_object.h"
+#include "engine\graphics_engine.h"
 #include <map>
-
-typedef int TextureObject;
 
 typedef std::map<std::string,TextureObject*> PicPutrePool;
 

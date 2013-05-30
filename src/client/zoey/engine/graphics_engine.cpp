@@ -79,7 +79,7 @@ void GraphicsEngine::RenderLine(int x1, int y1,
 }
 
 
-video::ITexture* GraphicsEngine::LoadTextrure(const io::path& filename)
+TextureObject* GraphicsEngine::LoadTextrure(const io::path& filename)
 {
     if (!m_Driver_ptr)
     {
@@ -107,7 +107,7 @@ bool GraphicsEngine::DrawImage(const std::string& strId, int x, int y,
     return true;
 }
 
-bool GraphicsEngine::DrawImage(irr::video::ITexture* iTex, int x, int y,
+bool GraphicsEngine::DrawImage(TextureObject* iTex, int x, int y,
         DWORD color)
 {
     if (!m_Driver_ptr)
