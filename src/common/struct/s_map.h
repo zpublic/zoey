@@ -1,5 +1,8 @@
 #pragma once
 
+#define MAP_XML_ROOT "zoeymap"
+#define MAP_XML_OBJECT "map"
+
 typedef struct tagMapTileTexture
 {
     int             id;
