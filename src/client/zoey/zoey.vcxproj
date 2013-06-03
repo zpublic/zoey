@@ -78,8 +78,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\utils\utils.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\..\common\src\c_map_texture.cpp" />
+    <ClCompile Include="control\pool\picture_pool.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="control\xml\cpicturexml_parse.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="control\xml\xml_list.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="engine\game_engine.cpp" />
+    <ClCompile Include="engine\graphics_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -89,7 +111,18 @@
     <ClInclude Include="..\..\..\import\irrlicht\CDynamicMeshBuffer.h" />
     <ClInclude Include="..\..\..\import\irrlicht\CIndexBuffer.h" />
     <ClInclude Include="..\..\..\import\irrlicht\CMeshBuffer.h" />
+    <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
+    <ClInclude Include="..\..\..\include\utils\singleton.h" />
+    <ClInclude Include="..\..\..\include\utils\utils.h" />
+    <ClInclude Include="control\pool\picture_pool.h" />
+    <ClInclude Include="control\xml\cpicturexml.h" />
+    <ClInclude Include="control\xml\cpicturexml_parse.h" />
+    <ClInclude Include="control\xml\parse_def.h" />
+    <ClInclude Include="control\xml\xml_list.h" />
+    <ClInclude Include="control\xml\xml_list_object.h" />
+    <ClInclude Include="control\xml\xml_object.h" />
     <ClInclude Include="engine\game_engine.h" />
+    <ClInclude Include="engine\graphics_engine.h" />
     <ClInclude Include="engine\iengine.h" />
     <ClInclude Include="engine\scene_engine.h" />
     <ClInclude Include="scene\scene.h" />

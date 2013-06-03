@@ -21,6 +21,8 @@ public:
 private:
     void Clear();
 
+    bool _Parse(TiXmlDocument& doc);
+
 private:
     MapTileTexturePool      m_poolTile;
 };

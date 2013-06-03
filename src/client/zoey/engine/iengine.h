@@ -11,7 +11,7 @@ public:
 
 public:
 
-    //virtual bool Initialize() = 0;
+    virtual bool Initialize() { return true; };
 
 };
 
