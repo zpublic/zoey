@@ -95,6 +95,9 @@
     <ClCompile Include="scene\menu_scene.cpp">
       <Filter>sourcefiles\scene</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\common\src\c_map_object.cpp">
+      <Filter>common\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\interface\i_map.h">
@@ -687,6 +690,9 @@
     </ClInclude>
     <ClInclude Include="scene\menu_scene.h">
       <Filter>sourcefiles\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\src\c_map_object.h">
+      <Filter>common\src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -90,6 +90,7 @@
     <ClCompile Include="..\..\..\include\utils\utils.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\..\common\src\c_map_object.cpp" />
     <ClCompile Include="..\..\common\src\c_map_texture.cpp" />
     <ClCompile Include="control\pool\picture_pool.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
@@ -117,6 +118,7 @@
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
     <ClInclude Include="..\..\..\include\utils\singleton.h" />
     <ClInclude Include="..\..\..\include\utils\utils.h" />
+    <ClInclude Include="..\..\common\src\c_map_object.h" />
     <ClInclude Include="control\pool\picture_pool.h" />
     <ClInclude Include="control\xml\cpicturexml.h" />
     <ClInclude Include="control\xml\cpicturexml_parse.h" />

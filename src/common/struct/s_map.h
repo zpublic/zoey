@@ -1,10 +1,17 @@
 #pragma once
 
+#include <vector>
+#include <map>
+
 #define MAP_XML_ROOT   "zoeymap"
-#define MAP_XML_OBJECT "map"
 #define MAP_TEXTRUE    "texture"
 #define ID_OBJECT      "id"
 #define NAME_OBJECT    "name"
+
+#define MAP_OBJECT          "map"
+#define MAP_OBJECT_FLOOR    "floor"
+#define MAP_OBJECT_OBJ      "object"
+#define MAP_OBJECT_PROPERTY "property"
 
 #define MAP_TILE   "tile"
 #define MAP_H_NUM  "h-num"
@@ -42,3 +49,6 @@ typedef struct tagMapTile
     int             obj;        ///> 物件tile纹理id
     DWORD           property;   ///> tile的特性（可否通过等）
 }MapTile;
+
+typedef std::map<int, MapTile*> MapObjectPool;
+typedef std::map<int, MapTile*>::iterator MapObjectPoolIt;
