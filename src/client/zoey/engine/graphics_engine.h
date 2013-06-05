@@ -6,7 +6,22 @@
 #include "iengine.h"
 #include <string>
 
-typedef irr::video::ITexture TextureObject;
+typedef struct _TextureObject
+{
+    _TextureObject()
+    {
+        nWidth = 0;
+        nHeight = 0;
+        nX = 0;
+        nY = 0;
+        pTex = NULL;
+    }
+    int nWidth;
+    int nHeight;
+    int nX;
+    int nY;
+    irr::video::ITexture* pTex;
+}TextureObject;
 
 class GraphicsEngine
     : public Singleton<GraphicsEngine>
@@ -37,7 +52,7 @@ public:
     bool DrawImage(TextureObject* iTex, int x, int y,
         DWORD color = 0xFFFFFFFF);
 
-    TextureObject* LoadTextrure(const irr::io::path& filename);
+    irr::video::ITexture* LoadTextrure(const irr::io::path& filename);
 
     void SetClipping( int x, int y, int w, int h);
 

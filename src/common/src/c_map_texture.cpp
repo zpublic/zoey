@@ -4,6 +4,10 @@
 #include "import\tinyxml-2.6.2\tinyxml.h"
 #include <atlbase.h>
 
+CMapTileTexture* Singleton<CMapTileTexture>::m_pInst = NULL;
+
+const wchar_t* pwszDefaultXml = L"res\\xml\\map_tile.xml";
+
 CMapTileTexture::CMapTileTexture()
 {
 
@@ -27,7 +31,11 @@ bool CMapTileTexture::LoadXml( const wchar_t* pwszXmlFile )
         return false;
     }
     TiXmlDocument XmlParse;
-    if (XmlParse.LoadFile(CW2A(pwszXmlFile)))
+    wchar_t filePath[MAX_PATH] = {0};
+    ::GetModuleFileNameW(0, filePath, MAX_PATH);
+    ::PathRemoveFileSpecW(filePath);
+    ::PathAppendW(filePath, pwszXmlFile);
+    if (XmlParse.LoadFile(CW2A(filePath)))
     {
         return _Parse(XmlParse);
     }
@@ -46,7 +54,7 @@ bool CMapTileTexture::_Parse(TiXmlDocument& doc)
     {
         return false;
     }
-    TiXmlNode* tiFirst = tiRoot->FirstChild(MAP_XML_OBJECT);
+    TiXmlNode* tiFirst = tiRoot->FirstChild(MAP_TILE);
     if (tiFirst == NULL)
     {
         return false;
@@ -57,12 +65,15 @@ bool CMapTileTexture::_Parse(TiXmlDocument& doc)
         tiObject = tiObject->NextSiblingElement())//读取当下元素中的所有属性
      {
          MapTileTexture pMap;
-         if(utils::GetXmlIntAttribute(tiObject, "id", pMap.id)
-             && utils::GetXmlStrAttributeA(tiObject, "name", pMap.name)
-             //&& utils::GetXmlStrAttributeA(tiObject, "texture", pMap.texture)
+         if(utils::GetXmlIntAttribute(tiObject, ID_OBJECT, pMap.id)
+             && utils::GetXmlStrAttributeA(tiObject, NAME_OBJECT, pMap.name)
             )
          {
-             m_poolTile[pMap.id] = pMap;
+            utils::GetXmlIntAttribute(tiObject, MAP_H_NUM, pMap.h_num);
+            utils::GetXmlIntAttribute(tiObject, MAP_W_NUM, pMap.w_num);
+            utils::GetXmlIntAttribute(tiObject, MAP_H_SPAN, pMap.h_span);
+            utils::GetXmlIntAttribute(tiObject, MAP_W_SPAN, pMap.w_span);
+            m_poolTile[pMap.id] = pMap;
          }
      }
     return true;

@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "control\pool\picture_pool.h"
 #include "graphics_engine.h"
 
 template<> GraphicsEngine* Singleton<GraphicsEngine>::m_pInst = NULL;
@@ -79,7 +80,7 @@ void GraphicsEngine::RenderLine(int x1, int y1,
 }
 
 
-TextureObject* GraphicsEngine::LoadTextrure(const io::path& filename)
+video::ITexture* GraphicsEngine::LoadTextrure(const io::path& filename)
 {
     if (!m_Driver_ptr)
     {
@@ -95,14 +96,30 @@ bool GraphicsEngine::DrawImage(const std::string& strId, int x, int y,
     {
         return false;
     }
-    ///> ÔÝÎÞ×ÊÔ´³Ø
-    const video::ITexture* texture = NULL;
+    int nWidth = 0, nHeight = 0;
+    TextureObject* texture = PicturePool::Instance()->Get(strId);
     if (!texture)
     {
         return false;
     }
-    m_Driver_ptr->draw2DImage(texture, position2di(x, y),
-        rect<s32>(0, 0, texture->getSize().Width, texture->getSize().Height),
+    if (texture->nWidth == 0)
+    {
+        nWidth = texture->pTex->getSize().Width;
+    }
+    else
+    {
+        nWidth = texture->nWidth;
+    }
+    if (texture->nHeight == 0)
+    {
+        nHeight = texture->pTex->getSize().Height;
+    }
+    else
+    {
+        nHeight = texture->nHeight;
+    }
+    m_Driver_ptr->draw2DImage(texture->pTex, position2di(x, y),
+        rect<s32>(texture->nX, texture->nY, nWidth, nHeight),
         0, color, true);
     return true;
 }
@@ -118,8 +135,9 @@ bool GraphicsEngine::DrawImage(TextureObject* iTex, int x, int y,
     {
         return false;
     }
-    m_Driver_ptr->draw2DImage(iTex, position2di(x, y),
-        rect<s32>(0, 0, iTex->getSize().Width, iTex->getSize().Height),
+    m_Driver_ptr->draw2DImage(iTex->pTex, position2di(x, y),
+        rect<s32>(iTex->nX, iTex->nY,
+        iTex->pTex->getSize().Width, iTex->pTex->getSize().Height),
         0, color, true);
     return true;
 }

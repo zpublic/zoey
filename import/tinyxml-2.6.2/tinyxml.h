@@ -298,7 +298,7 @@ protected:
 
 	inline static bool IsWhiteSpace( char c )		
 	{ 
-		return ( isspace( (unsigned char) c ) || c == '\n' || c == '\r' ); 
+		return ( ::isspace( (unsigned char) c ) || c == '\n' || c == '\r' ); 
 	}
 	inline static bool IsWhiteSpace( int c )
 	{

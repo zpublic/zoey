@@ -92,6 +92,9 @@
     <ClCompile Include="..\..\..\include\utils\utils.cpp">
       <Filter>include\utils</Filter>
     </ClCompile>
+    <ClCompile Include="scene\menu_scene.cpp">
+      <Filter>sourcefiles\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\interface\i_map.h">
@@ -681,6 +684,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\include\utils\utils.h">
       <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\menu_scene.h">
+      <Filter>sourcefiles\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

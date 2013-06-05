@@ -3,6 +3,7 @@
 
 #include "import\irrlicht\irrlicht.h"
 #include "include\utils\singleton.h"
+#include "engine\scene_engine.h"
 #include <tchar.h>
 
 #ifdef _IRR_WINDOWS_

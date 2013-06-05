@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "game_engine.h"
 #include "graphics_engine.h"
+#include "src\common\src\c_map_texture.h"
 
 GameEngine* Singleton<GameEngine>::m_pInst = NULL;
 
@@ -10,7 +11,7 @@ GameEngine::GameEngine()
     : m_irrDevice(NULL)
     , m_VideoDriver(NULL)
 {
-
+    CMapTileTexture::Instance()->Load();
 }
 
 GameEngine::~GameEngine()
@@ -45,6 +46,7 @@ bool GameEngine::IsDone()
 
 void GameEngine::Update()
 {
+    SceneEngine::Instance()->Update();
     if(!m_irrDevice || !m_irrDevice->run())
     {
         m_IsDone = false;
@@ -53,6 +55,7 @@ void GameEngine::Update()
 
 void GameEngine::Render()
 {
+    SceneEngine::Instance()->Output();
     if (m_VideoDriver)
     {
         GraphicsEngine::Instance()->BeginScene(
@@ -63,9 +66,6 @@ void GameEngine::Render()
         ::GetModuleFileNameA(0, filePath, MAX_PATH);
         ::PathRemoveFileSpecA(filePath);
         ::PathAppendA(filePath, "res\\images\\brick0.png");
-        GraphicsEngine::Instance()->DrawImage(
-            GraphicsEngine::Instance()->LoadTextrure(filePath),
-            100, 0);
 
         GraphicsEngine::Instance()->EndScene();
     }

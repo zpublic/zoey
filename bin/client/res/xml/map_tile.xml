@@ -1,0 +1,4 @@
+<zoeymap>
+	<tile id = "0" name = "map1" texture = "maptex1" w-num = "3" h-num = "4" w-span = "5" h-span = "6" />
+	<tile id = "1" name = "map2" texture = "maptex2" w-num = "4" h-num = "8" w-span = "9" h-span = "10" />
+</zoeymap>

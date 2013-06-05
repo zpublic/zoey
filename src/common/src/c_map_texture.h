@@ -1,10 +1,12 @@
 #pragma once
 #include "struct/s_map.h"
-
-const wchar_t* pwszDefaultXml = L"res\\xml\\map_tile.xml";
+#include "import\tinyxml-2.6.2\tinyxml.h"
+#include "include\utils\singleton.h"
 
 class CMapTileTexture
+    : public Singleton<CMapTileTexture>
 {
+    friend Singleton<CMapTileTexture>;
 public:
     CMapTileTexture();
     ~CMapTileTexture();

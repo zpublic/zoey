@@ -104,6 +104,9 @@
     <ClCompile Include="engine\graphics_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="scene\menu_scene.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +128,7 @@
     <ClInclude Include="engine\graphics_engine.h" />
     <ClInclude Include="engine\iengine.h" />
     <ClInclude Include="engine\scene_engine.h" />
+    <ClInclude Include="scene\menu_scene.h" />
     <ClInclude Include="scene\scene.h" />
     <ClInclude Include="..\..\..\import\irrlicht\coreutil.h" />
     <ClInclude Include="..\..\..\import\irrlicht\CVertexBuffer.h" />

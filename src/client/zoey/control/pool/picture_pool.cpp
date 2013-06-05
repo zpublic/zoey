@@ -8,9 +8,13 @@ PicturePool::PicturePool()
         it != CPictureXMLParse::Instance()->End();
         it++)
     {
-        TextureObject* pObject = NULL;
-        pObject = GraphicsEngine::Instance()->LoadTextrure(
+        TextureObject* pObject = new TextureObject;
+        pObject->pTex = GraphicsEngine::Instance()->LoadTextrure(
             it->second->PicturePath.c_str());
+        pObject->nX = it->second->Posx;
+        pObject->nY = it->second->Posy;
+        pObject->nWidth = pObject->nWidth;
+        pObject->nHeight = pObject->nHeight;
         m_Pool[it->first] = pObject;
     }
 }
@@ -43,7 +47,7 @@ void PicturePool::Release()
     {
         if (it->second)
         {
-            it->second->drop();
+            delete it->second;
             it->second = NULL;
         }
     }
