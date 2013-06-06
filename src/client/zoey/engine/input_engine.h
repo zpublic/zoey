@@ -36,7 +36,7 @@ public:
 
     PeopleDirection Get() const;
 
-    bool OnEvent(const irr::SEvent &TEvent);
+    virtual bool OnEvent(const irr::SEvent &TEvent);
 
     KeyState IsKey(int nKey);
 

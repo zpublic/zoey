@@ -21,6 +21,8 @@ public:
     bool Initialize(TCHAR* lpszText, int Width, int Height,
         irr::video::E_DRIVER_TYPE TDriverType, bool IsFull);
 
+    irr::gui::IGUIEnvironment* GetGUIObject() const;
+
     void Close();
 
     bool IsDone();

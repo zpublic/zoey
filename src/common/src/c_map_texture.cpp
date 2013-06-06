@@ -30,6 +30,7 @@ bool CMapTileTexture::LoadXml( const wchar_t* pwszXmlFile )
     {
         return false;
     }
+
     TiXmlDocument XmlParse;
     wchar_t filePath[MAX_PATH] = {0};
     ::GetModuleFileNameW(0, filePath, MAX_PATH);
@@ -39,6 +40,7 @@ bool CMapTileTexture::LoadXml( const wchar_t* pwszXmlFile )
     {
         return _Parse(XmlParse);
     }
+
     return true;
 }
 

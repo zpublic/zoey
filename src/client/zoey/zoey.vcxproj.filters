@@ -98,6 +98,9 @@
     <ClCompile Include="..\..\common\src\c_map_object.cpp">
       <Filter>common\src</Filter>
     </ClCompile>
+    <ClCompile Include="engine\input_engine.cpp">
+      <Filter>sourcefiles\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\interface\i_map.h">
@@ -693,6 +696,9 @@
     </ClInclude>
     <ClInclude Include="..\..\common\src\c_map_object.h">
       <Filter>common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\input_engine.h">
+      <Filter>sourcefiles\engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

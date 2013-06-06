@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "input_Engine.h"
 
 template<> InputEngine* Singleton<InputEngine>::m_pInst = NULL;
@@ -29,4 +30,9 @@ PeopleDirection InputEngine::Get() const
 void InputEngine::Update()
 {
 
+}
+
+bool InputEngine::OnEvent(const irr::SEvent &TEvent)
+{
+    return true;
 }
