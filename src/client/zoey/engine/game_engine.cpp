@@ -2,6 +2,7 @@
 #include "game_engine.h"
 #include "graphics_engine.h"
 #include "src\common\src\c_map_texture.h"
+#include "src\common\src\c_map_object.h"
 
 GameEngine* Singleton<GameEngine>::m_pInst = NULL;
 
@@ -12,6 +13,7 @@ GameEngine::GameEngine()
     , m_VideoDriver(NULL)
 {
     CMapTileTexture::Instance()->Load();
+    CMapObjectPool::Instance()->Push("res\\xml\\map1.xml");
 }
 
 GameEngine::~GameEngine()
@@ -62,10 +64,13 @@ void GameEngine::Render()
             irr::video::SColor(255,100,101,140));
         ///> Test Draw
         GraphicsEngine::Instance()->RenderLine(10,52,0,0);
+
+        /*
         char filePath[MAX_PATH] = {0};
         ::GetModuleFileNameA(0, filePath, MAX_PATH);
         ::PathRemoveFileSpecA(filePath);
         ::PathAppendA(filePath, "res\\images\\brick0.png");
+        */
 
         GraphicsEngine::Instance()->EndScene();
     }

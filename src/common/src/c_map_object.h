@@ -3,10 +3,13 @@
 
 #include "src\common\struct\s_map.h"
 #include "import\tinyxml-2.6.2\tinyxml.h"
+#include "include\utils\singleton.h"
 #include <string>
 
 class CMapObjectPool
+    : public Singleton<CMapObjectPool>
 {
+    friend Singleton<CMapObjectPool>;
 public:
     CMapObjectPool();
     ~CMapObjectPool();
