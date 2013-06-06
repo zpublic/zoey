@@ -80,7 +80,17 @@ bool CPictureXMLParse::_Parse(TiXmlDocument& TinyXML)
             utils::GetXmlIntAttribute(tiPicture, PICTURE_POSY, pPicture->Posy);
             utils::GetXmlIntAttribute(tiPicture, HEIGHT_OBJECT, pPicture->Hight);
             utils::GetXmlIntAttribute(tiPicture, WIDTH_OBJECT, pPicture->Width);
+            auto it = m_mapPiture.find(pPicture->PictureId);
+            if (it != m_mapPiture.end())
+            {
+                delete it->second;
+                it->second = NULL;
+            }
             m_mapPiture[pPicture->PictureId] = pPicture;
+         }
+         else
+         {
+             delete pPicture;
          }
      }
      return true;
